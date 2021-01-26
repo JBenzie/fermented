@@ -1,0 +1,63 @@
+﻿@page "/search"
+
+@inherits BeerListBase
+
+<h1>Beer Finder</h1>
+
+<p>Enter the name of the beer you want then click Search.</p>
+
+<div class="col-md-3">
+    <div class="input-group mb-3">
+        <input type="text" class="form-control" @bind-value="@searchTerm" placeholder="ex: pilsnerd" aria-label="Search term" aria-describedby="button-addon2">
+        <button class="btn btn-outline-success" @onclick="@(async () => await OnSearchAsync())" type="button" id="button-addon2">Search!</button>
+    </div>
+</div>
+
+@if (results == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+
+    if (results.data == null)
+    {
+        <p><em>We couldn't find that beer. Try again...</em></p>
+    }
+    else
+    {
+        <table class="table table-hover table-responsive-sm">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>ABV</th>
+                    <th>Description</th>
+                    <th>Label</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var result in results.data)
+                {
+                    <tr>
+                        <td>@result.nameDisplay</td>
+                        <td>@result.abv</td>
+                        <td>@result.description</td>
+                        @if (result.labels != null)
+                        {
+                            <td><img src=@(result.labels.icon) /></td>
+                        }
+                        else
+                        {
+                            <td>Label Unavailable</td>
+                        }
+
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+}
+
+@code {
+
+}

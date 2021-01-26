@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29806.167
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "fermented", "fermented\fermented.csproj", "{097EDA1D-F89C-4936-9393-32FD4CCD3956}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{097EDA1D-F89C-4936-9393-32FD4CCD3956}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{097EDA1D-F89C-4936-9393-32FD4CCD3956}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{097EDA1D-F89C-4936-9393-32FD4CCD3956}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{097EDA1D-F89C-4936-9393-32FD4CCD3956}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DF911282-21A1-44F9-83F9-3B572D7839AF}
+	EndGlobalSection
+EndGlobal
