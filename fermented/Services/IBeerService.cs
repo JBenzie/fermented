@@ -8,6 +8,6 @@ namespace fermented.Services
 {
     public interface IBeerService
     {
-        Task<Root> GetBeers(string searchTerm);
+        Task<List<Beer>> GetBreweryDBData(string searchTerm = null);
     }
 }

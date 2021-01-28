@@ -13,51 +13,39 @@
     </div>
 </div>
 
-@if (results == null)
+
+@if (Beers == null)
 {
-    <p><em>Loading...</em></p>
+    <p><em>Nothing to see here... Let's search for some beer!</em></p>
 }
 else
 {
+    <table class="table table-hover table-responsive-sm">
+        <thead>
+            <tr>
+                <th>Source</th>
+                <th>Name</th>
+                <th>ABV</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
 
-    if (results.data == null)
-    {
-        <p><em>We couldn't find that beer. Try again...</em></p>
-    }
-    else
-    {
-        <table class="table table-hover table-responsive-sm">
-            <thead>
+            @foreach (var beer in Beers)
+            {
                 <tr>
-                    <th>Name</th>
-                    <th>ABV</th>
-                    <th>Description</th>
-                    <th>Label</th>
+                    <td>@beer.src</td>
+                    <td>@beer.name</td>
+                    <td>@beer.abv</td>
+                    <td>@beer.desc</td>
                 </tr>
-            </thead>
-            <tbody>
-                @foreach (var result in results.data)
-                {
-                    <tr>
-                        <td>@result.nameDisplay</td>
-                        <td>@result.abv</td>
-                        <td>@result.description</td>
-                        @if (result.labels != null)
-                        {
-                            <td><img src=@(result.labels.icon) /></td>
-                        }
-                        else
-                        {
-                            <td>Label Unavailable</td>
-                        }
-
-                    </tr>
-                }
-            </tbody>
-        </table>
-    }
+            }
+                
+        </tbody>
+    </table>
 }
 
 @code {
+
 
 }
